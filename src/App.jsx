@@ -4,7 +4,10 @@ import QuizScreen from "./components/QuizScreen";
 import StartScreen from "./components/StartScreen";
 import ResultsScreen from "./components/ResultsScreen";
 import ReviewScreen from "./components/ReviewScreen";
-import Background from "./assets/background.png"
+import Background from "./assets/background.png";
+import shuffleArray from "./utils/shuffle";
+import { isCloseAnswer } from "./components/CloseAnswer";
+import { checkEnumeration } from "./components/CloseAnswer";
 
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -13,44 +16,103 @@ function App() {
   const [timeoutCount, setTimeoutCount] = useState(0);
   const [userAnswers, setUserAnswers] = useState([]);
   const [studentName, setStudentName] = useState("");
-  const selectAnswer = (index) => {
+  const [quizQuestions] = useState(() => shuffleArray(questions));
 
-    setSelectedAnswer(index);
 
-    const isCorrect = index === questions[currentQuestion].correct;
 
+
+  const getQuestionTime = (question) => {
+    switch (question.type) {
+      case "enumeration":
+        return 120; // 90 seconds
+
+      case "identification":
+        return 40;
+
+      case "multiple":
+      default:
+        return 40;
+    }
+  };
+
+  const selectAnswer = (answer) => {
+
+    setSelectedAnswer(answer);
+
+    const current = quizQuestions[currentQuestion];
+
+    let earnedPoints = 0;
+    let isCorrect = false;
+
+    // Multiple Choice
+    if (current.type === "multiple") {
+      isCorrect = answer === current.correct;
+
+      if (isCorrect) {
+        earnedPoints = 1;
+      }
+    }
+
+    // Identification
+    else if (current.type === "identification") {
+      isCorrect = isCloseAnswer(answer, current.answer);
+
+      if (isCorrect) {
+        earnedPoints = 1;
+      }
+    }
+
+    // Enumeration
+    else if (current.type === "enumeration") {
+      earnedPoints = checkEnumeration(answer, current.answers);
+      isCorrect = earnedPoints > 0;
+    }
+
+    // Update score
+    if (earnedPoints > 0) {
+      setScore(prev => prev + earnedPoints);
+    }
+
+    // Update correct/wrong feedback
     if (isCorrect) {
-      setScore(prev => prev + 1);
       setFeedback("correct");
     } else {
       setWrongCount(prev => prev + 1);
       setFeedback("wrong");
     }
 
+    // Save answer for review
     setUserAnswers(prev => [
       ...prev,
       {
         questionIndex: currentQuestion,
-        selected: index,
-        correct: questions[currentQuestion].correct,
+        selected: answer,
+        correct:
+          current.type === "multiple"
+            ? current.correct
+            : current.type === "identification"
+              ? current.answer
+              : current.answers,
         timedOut: false,
       },
     ]);
 
+    // Next question
     setTimeout(() => {
 
       setFeedback("");
       setSelectedAnswer(null);
 
-      if (currentQuestion < questions.length - 1) {
-        setCurrentQuestion(prev => prev + 1);
-        setTimeLeft(40);
+      if (currentQuestion < quizQuestions.length - 1) {
+        const nextIndex = currentQuestion + 1;
+
+        setCurrentQuestion(nextIndex);
+        setTimeLeft(getQuestionTime(quizQuestions[nextIndex]));
       } else {
         setScreen("results");
       }
 
     }, 1000);
-
   };
 
 
@@ -61,17 +123,46 @@ function App() {
   };
 
 
-  const [timeLeft, setTimeLeft] = useState(40);
+  const [timeLeft, setTimeLeft] = useState(
+    getQuestionTime(quizQuestions[0])
+  );
   useEffect(() => {
 
     if (screen !== "quiz") return;
 
     if (timeLeft <= 0) {
 
-      if (currentQuestion < questions.length - 1) {
+      // Count the timeout
+      setTimeoutCount(prev => prev + 1);
 
-        setCurrentQuestion(prev => prev + 1);
-        setTimeLeft(40);
+      // Count it as wrong
+      setWrongCount(prev => prev + 1);
+
+      // Save the unanswered question for Review
+      const current = quizQuestions[currentQuestion];
+
+      setUserAnswers(prev => [
+        ...prev,
+        {
+          questionIndex: currentQuestion,
+          selected: "",
+          correct:
+            current.type === "multiple"
+              ? current.correct
+              : current.type === "identification"
+                ? current.answer
+                : current.answers,
+          timedOut: true,
+        },
+      ]);
+
+      // Go to the next question
+      if (currentQuestion < quizQuestions.length - 1) {
+
+        const nextIndex = currentQuestion + 1;
+
+        setCurrentQuestion(nextIndex);
+        setTimeLeft(getQuestionTime(quizQuestions[nextIndex]));
 
       } else {
 
@@ -95,7 +186,7 @@ function App() {
   const restartQuiz = () => {
     setCurrentQuestion(0);
     setScore(0);
-    setTimeLeft(40);
+    setTimeLeft(getQuestionTime(quizQuestions[0]));
     setWrongCount(0);
     setTimeoutCount(0);
     setUserAnswers([]);
@@ -139,7 +230,11 @@ function App() {
   };
 
 
-
+  const totalPoints = quizQuestions.reduce((total, question) => {
+    return total + (question.type === "enumeration"
+      ? question.answers.length
+      : 1);
+  }, 0);
 
 
   return (
@@ -153,7 +248,8 @@ function App() {
         {screen === "start" && (
           <StartScreen
             title="IT208 - Timed Quiz Challenge"
-            totalQuestions={questions.length}
+            totalQuestions={quizQuestions.length}
+            totalPoints={totalPoints}
             studentName={studentName}
             setStudentName={setStudentName}
             onStart={startQuiz}
@@ -162,12 +258,12 @@ function App() {
 
         {screen === "quiz" && (
           <QuizScreen
-            question={questions[currentQuestion]}
+            question={quizQuestions[currentQuestion]}
             onAnswer={selectAnswer}
             timeLeft={timeLeft}
             selectedAnswer={selectedAnswer}
             currentQuestion={currentQuestion}
-            totalQuestions={questions.length}
+            totalQuestions={quizQuestions.length}
             score={score}
             feedback={feedback}
           />
@@ -176,7 +272,7 @@ function App() {
         {screen === "results" && (
           <ResultsScreen
             score={score}
-            totalQuestions={questions.length}
+            totalQuestions={totalPoints}
             studentName={studentName}
             wrongCount={wrongCount}
             timeoutCount={timeoutCount}
@@ -188,7 +284,7 @@ function App() {
 
         {screen === "review" && (
           <ReviewScreen
-            questions={questions}
+            questions={quizQuestions}
             userAnswers={userAnswers}
             onBack={() => setScreen("results")}
           />

@@ -1,11 +1,12 @@
-function StartScreen({ 
-    title, 
+function StartScreen({
+    title,
     totalQuestions,
+    totalPoints,
     studentName,
-    setStudentName, 
+    setStudentName,
     onStart }) {
-        
-        const handleSubmit = (e) => {
+
+    const handleSubmit = (e) => {
         e.preventDefault();
 
         if (studentName.trim() === "") {
@@ -40,7 +41,7 @@ function StartScreen({
 
                 <div className="bg-black/50 backdrop-blur-md border border-emerald-500/30 rounded-2xl p-6 mb-8">
 
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-3 gap-4">
 
                         <div>
                             <p className="text-emerald-200 text-sm">
@@ -53,14 +54,23 @@ function StartScreen({
                         </div>
 
                         <div>
-                            <p className="text-emerald-200 text-sm ">
+                            <p className="text-emerald-200 text-sm">
+                                Total Points
+                            </p>
+
+                            <h2 className="text-2xl font-bold text-yellow-400">
+                                {totalPoints}
+                            </h2>
+                        </div>
+
+                        <div>
+                            <p className="text-emerald-200 text-sm">
                                 Time Limit
                             </p>
 
                             <h2 className="text-2xl font-bold text-white">
                                 40 sec
                             </h2>
-
                         </div>
 
                     </div>
@@ -86,7 +96,7 @@ function StartScreen({
 
                     <button
                         type="submit"
-                         className="w-full py-3 rounded-xl font-semibold
+                        className="w-full py-3 rounded-xl font-semibold
                bg-gradient-to-r
                from-emerald-500
                to-green-600

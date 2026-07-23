@@ -1,3 +1,5 @@
+import { isCloseAnswer } from "./CloseAnswer";
+
 function ReviewScreen({
     questions,
     userAnswers,
@@ -28,17 +30,29 @@ function ReviewScreen({
                 const q = questions[answer.questionIndex];
 
                 const isCorrect =
-                    answer.selected === answer.correct;
+                    q.type === "multiple"
+                        ? answer.selected === answer.correct
+                        : q.type === "identification"
+                            ? isCloseAnswer(answer.selected, answer.correct)
+                            : q.type === "enumeration"
+                                ? Array.isArray(answer.selected) &&
+                                Array.isArray(answer.correct) &&
+                                answer.selected.length === answer.correct.length &&
+                                answer.selected.every((item) =>
+                                    answer.correct.some((correct) =>
+                                        isCloseAnswer(item, correct)
+                                    )
+                                )
+                                : false;
 
                 return (
 
                     <div
                         key={index}
-                        className={`mb-5 p-6 rounded-xl ${
-                            isCorrect
-                                ? "bg-green-900"
-                                : "bg-red-900"
-                        }`}
+                        className={`mb-5 p-6 rounded-xl ${isCorrect
+                            ? "bg-green-900"
+                            : "bg-red-900"
+                            }`}
                     >
 
                         <h2 className="font-bold text-white mb-3">
@@ -58,15 +72,16 @@ function ReviewScreen({
                             Your Answer :
 
                             <span className="font-bold ml-2">
-
-                                {
-                                    answer.timedOut
-                                        ? "No Answer"
-                                        : q.options[answer.selected]
-                                }
-
+                                {answer.timedOut
+                                    ? "No Answer"
+                                    : q.type === "multiple"
+                                        ? q.options[answer.selected]
+                                        : q.type === "enumeration"
+                                            ? Array.isArray(answer.selected)
+                                                ? answer.selected.join(", ")
+                                                : answer.selected
+                                            : answer.selected}
                             </span>
-
                         </p>
 
                         {!isCorrect && (
@@ -76,9 +91,13 @@ function ReviewScreen({
                                 Correct Answer :
 
                                 <span className="text-green-400 ml-2">
-
-                                    {q.options[answer.correct]}
-
+                                    {q.type === "multiple"
+                                        ? q.options[answer.correct]
+                                        : q.type === "enumeration"
+                                            ? Array.isArray(answer.correct)
+                                                ? answer.correct.join(", ")
+                                                : answer.correct
+                                            : answer.correct}
                                 </span>
 
                             </p>

@@ -1,6 +1,7 @@
 import QuestionCard from "./QuestionCard";
 import Timer from "./Timer";
 
+
 function QuizScreen({
     question,
     onAnswer,
