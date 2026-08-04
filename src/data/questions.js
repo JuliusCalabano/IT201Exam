@@ -1,150 +1,176 @@
 
 const questions = [
     {
-        question: "Which of the following is an example of a dynamic web application?",
-        type: "multiple",
-        options:
-            ["Personal Resume Website",
-                "Company Contact Page ",
-                "Facebook",
-                "Portfolio Website"],
-        correct: 2
-    },
-    {
-        question: "A developer accidentally removed one attribute from the code. <a>Visit Google</a> Which attribute was most likely removed?",
-        type: "multiple",
-        options:
-            ["src",
-                "target",
-                "alt",
-                "href"],
-        correct: 3
-    },
-    {
-        question: "A company website contains the following code. <img src=\"logo.png\" alt=\"ABC Company Logo\"> The image file was accidentally deleted from the server.",
+        question: "Which statement BEST describes a computer?",
         type: "multiple",
         options: [
-            "The browser displays the alt text instead of the image.",
-            "The browser displays a broken image without the alt text.",
-            "The browser automatically loads another image.",
-            "The webpage fails to load completely."
+            "An electronic device that receives data, processes it, stores it, and gives information.",
+            "An electronic device that only stores files and retrieves information.",
+            "An electronic device that performs calculations without storing data.",
+            "An electronic device designed mainly for internet communication."
         ],
         correct: 0
     },
     {
-        question: "A programmer wants to display this information on a webpage. Instead of writing HTML tables, the programmer used only unordered lists. Which is the best reason this is considered poor design?",
+        question: "Which of the following is NOT listed as an importance of computers in accounting?",
         type: "multiple",
         options: [
-            "Lists are intended for related items, not tabular data.",
-            "Lists cannot display multiple pieces of information.",
-            "Tables better organize data into rows and columns.",
-            "Tables are required whenever numbers are displayed."
+            "Financial Reporting",
+            "Efficient Record Keeping",
+            "Manual Data Encoding",
+            "Better Decision-Making"
         ],
         correct: 2
     },
     {
-        question: "A business owner says, 'I don't want to contact a developer every time I change the prices of my products.' Which website solution would best satisfy this requirement?",
+        question: "Which historical device introduced the concept of performing calculations using a tool instead of relying only on mental computation?",
         type: "multiple",
         options: [
-            "Static website with additional images.",
-            "Dynamic website connected to a database.",
-            "Static website with more hyperlinks.",
-            "Static website containing multiple HTML pages."
+            "Pascaline",
+            "Difference Engine",
+            "Abacus",
+            "Analytical Engine"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which computer became the first commercially available computer in the United States?",
+        type: "multiple",
+        options: [
+            "ENIAC",
+            "UNIVAC",
+            "Difference Engine",
+            "Analytical Engine"
         ],
         correct: 1
     },
     {
-        question: "Which situation would NOT normally require a dynamic website?",
+        question: "Which technology made it possible to place many transistors on a single chip during the Third Generation?",
         type: "multiple",
         options: [
-            "A website where customers create accounts and place orders.",
-            "A website where users submit online applications.",
-            "A website where administrators frequently update product information.",
-            "A website that only provides company information."
+            "Vacuum Tubes",
+            "Transistors",
+            "Integrated Circuits (ICs)",
+            "Microprocessors"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which computing pioneer is recognized as the First Computer Programmer because she wrote the first algorithm intended for a machine?",
+        type: "multiple",
+        options: [
+            "Ada Lovelace",
+            "Alan Turing",
+            "Charles Babbage",
+            "Tim Berners-Lee"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which communication device connects a home or office network to an Internet Service Provider (ISP)?",
+        type: "multiple",
+        options: [
+            "Router",
+            "Wi-Fi Adapter",
+            "Network Interface Card (NIC)",
+            "Modem"
         ],
         correct: 3
     },
     {
-        question: "What does the acronym HTML stand for?",
+        question: "Which communication device directs data between multiple devices on the same network?",
         type: "multiple",
         options: [
-            "HyperText Markdown Language",
-            "Hyper Transfer Markup Language",
-            "HyperText Markup Language",
-            "HighText Machine Language"
+            "Modem",
+            "Router",
+            "Wi-Fi Adapter",
+            "Network Interface Card (NIC)"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of software manages computer hardware and allows application software to run?",
+        type: "multiple",
+        options: [
+            "Spreadsheet Software",
+            "Application Software",
+            "System Software",
+            "Utility Software"
         ],
         correct: 2
     },
     {
-        question: "Which statement about HTML is correct?",
+        question: "Which statement correctly describes RAM?",
         type: "multiple",
         options: [
-            "Tag names must always be lowercase.",
-            "Tag names should never be uppercase.",
-            "Tag names are not case-sensitive.",
-            "Tag names must use the same case throughout the document."
+            "It permanently stores files even after the computer is turned off.",
+            "It temporarily stores data while programs are running.",
+            "It connects computers to the internet.",
+            "It controls communication between network devices."
         ],
-        correct: 2
+        correct: 1
+    },
+    {
+        question: "Which statement correctly describes SSD and HDD?",
+        type: "multiple",
+        options: [
+            "They permanently store files and retain data even when power is turned off.",
+            "They temporarily store data that the CPU is currently processing.",
+            "They permanently store data but lose all information when the computer is turned off.",
+            "They only store the operating system and cannot store user files."
+        ],
+        correct: 0
+    },
+    {
+        question: "Which invention is considered the first design for a general-purpose computer?",
+        type: "multiple",
+        options: [
+            "Pascaline",
+            "ENIAC",
+            "Difference Engine",
+            "Analytical Engine"
+        ],
+        correct: 3
     },
     {
         type: "identification",
-        question: "It is the process of creating and maintaining websites and web applications.",
-        answer: "Web Development"
+        question: "The first known calculating device used for counting and basic arithmetic.",
+        answer: "Abacus"
     },
     {
         type: "identification",
-        question: "A website whose content usually changes only when edited by the developer.",
-        answer: "Static Website"
+        question: "The technology used in the Second Generation of computers.",
+        answer: "Transistors"
     },
     {
         type: "identification",
-        question: "A website that allows users to interact with content and retrieve data from a database.",
-        answer: "Dynamic Website"
+        question: "The person known as the 'Father of the Computer.'",
+        answer: "Charles Babbage"
     },
     {
         type: "identification",
-        question: "The attribute that specifies the destination URL of a hyperlink.",
-        answer: "href"
+        question: "The first design for a general-purpose computer.",
+        answer: "Analytical Engine"
     },
     {
         type: "identification",
-        question: "The HTML tag used to display an image.",
-        answer: "<img>"
+        question: "The co-founder of Microsoft.",
+        answer: "Bill Gates"
     },
     {
         type: "identification",
-        question: "The required attribute that specifies the image file location.",
-        answer: "src"
+        question: "The brain of the computer that performs calculations and executes instructions.",
+        answer: ["CPU","Central Processing Unit"]
     },
     {
         type: "identification",
-        question: "The HTML element used to create a table row.",
-        answer: "<tr>"
+        question: "An input device used to capture a person's voice.",
+        answer: ["Microphone", "Mic"]
     },
     {
         type: "identification",
-        question: "Which HTML element creates a table?",
-        answer: "<table>"
-    },
-    {
-        type: "identification",
-        question: "Which attribute provides alternative text for an image?",
-        answer: "alt"
-    },
-    {
-        type: "identification",
-        question: "Which HTML tag is used to create a hyperlink?",
-        answer: "<a>"
-    },
-    {
-        type: "identification",
-        question: "He is credited as the inventor of HTML, which became the foundation of the World Wide Web.",
-        answer: "Tim Berners Lee"
-    },
-    {
-        type: "identification",
-        question: "In what year was HyperText Markup Language (HTML) first introduced to the public?",
-        answer: "1991"
+        question: "An output device that displays text, images, and videos.",
+        answer: "Monitor"
     }
 ];
 export default questions;

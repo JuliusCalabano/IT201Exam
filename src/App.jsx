@@ -55,7 +55,14 @@ function App() {
 
     // Identification
     else if (current.type === "identification") {
-      isCorrect = isCloseAnswer(answer, current.answer);
+
+      if (Array.isArray(current.answer)) {
+        isCorrect = current.answer.some(ans =>
+          isCloseAnswer(answer, ans)
+        );
+      } else {
+        isCorrect = isCloseAnswer(answer, current.answer);
+      }
 
       if (isCorrect) {
         earnedPoints = 1;
@@ -247,7 +254,7 @@ function App() {
       <div className="min-h-screen bg-black/60">
         {screen === "start" && (
           <StartScreen
-            title="IT208 - Timed Quiz Challenge"
+            title="MAS3 - Timed Quiz Challenge"
             totalQuestions={quizQuestions.length}
             totalPoints={totalPoints}
             studentName={studentName}

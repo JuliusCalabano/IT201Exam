@@ -33,7 +33,11 @@ function ReviewScreen({
                     q.type === "multiple"
                         ? answer.selected === answer.correct
                         : q.type === "identification"
-                            ? isCloseAnswer(answer.selected, answer.correct)
+                            ? Array.isArray(answer.correct)
+                                ? answer.correct.some(correct =>
+                                    isCloseAnswer(answer.selected, correct)
+                                )
+                                : isCloseAnswer(answer.selected, answer.correct)
                             : q.type === "enumeration"
                                 ? Array.isArray(answer.selected) &&
                                 Array.isArray(answer.correct) &&
@@ -93,10 +97,8 @@ function ReviewScreen({
                                 <span className="text-green-400 ml-2">
                                     {q.type === "multiple"
                                         ? q.options[answer.correct]
-                                        : q.type === "enumeration"
-                                            ? Array.isArray(answer.correct)
-                                                ? answer.correct.join(", ")
-                                                : answer.correct
+                                        : Array.isArray(answer.correct)
+                                            ? answer.correct.join(" / ")
                                             : answer.correct}
                                 </span>
 
