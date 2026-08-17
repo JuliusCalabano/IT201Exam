@@ -9,6 +9,7 @@ import shuffleArray from "./utils/shuffle";
 import { isCloseAnswer } from "./components/CloseAnswer";
 import { checkEnumeration } from "./components/CloseAnswer";
 
+
 function App() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [score, setScore] = useState(0);
@@ -17,6 +18,8 @@ function App() {
   const [userAnswers, setUserAnswers] = useState([]);
   const [studentName, setStudentName] = useState("");
   const [quizQuestions] = useState(() => shuffleArray(questions));
+  const [isPaused, setIsPaused] = useState(false);
+  const [pauseTimeLeft, setPauseTimeLeft] = useState(300);
 
 
 
@@ -27,11 +30,11 @@ function App() {
         return 120; // 90 seconds
 
       case "identification":
-        return 40;
+        return 60;
 
       case "multiple":
       default:
-        return 40;
+        return 60;
     }
   };
 
@@ -129,13 +132,24 @@ function App() {
     setScreen("quiz");
   };
 
+  const handlePause = () => {
+    if (pauseTimeLeft <= 0) return;
+
+    setIsPaused(true);
+  };
+
+  const handleResume = () => {
+    setIsPaused(false);
+  };
+
 
   const [timeLeft, setTimeLeft] = useState(
     getQuestionTime(quizQuestions[0])
   );
+  // QUIZ TIMER
   useEffect(() => {
 
-    if (screen !== "quiz") return;
+    if (screen !== "quiz" || isPaused) return;
 
     if (timeLeft <= 0) {
 
@@ -188,7 +202,36 @@ function App() {
 
     return () => clearTimeout(timer);
 
-  }, [timeLeft, screen, currentQuestion]);
+  }, [timeLeft, screen, currentQuestion, isPaused]);
+
+
+  // ⭐ PAUSE TIMER
+  useEffect(() => {
+
+    if (!isPaused || pauseTimeLeft <= 0) return;
+
+    const timer = setTimeout(() => {
+
+      setPauseTimeLeft(prev => prev - 1);
+
+    }, 1000);
+
+    return () => clearTimeout(timer);
+
+  }, [isPaused, pauseTimeLeft]);
+
+
+  // ⭐ AUTOMATICALLY RESUME WHEN PAUSE TIME IS USED
+  useEffect(() => {
+
+    if (pauseTimeLeft <= 0 && isPaused) {
+
+      setIsPaused(false);
+
+    }
+
+  }, [pauseTimeLeft, isPaused]);
+
 
   const restartQuiz = () => {
     setCurrentQuestion(0);
@@ -198,8 +241,9 @@ function App() {
     setTimeoutCount(0);
     setUserAnswers([]);
 
-    // Shuffle questions again (if you're using shuffle)
-    // setQuestions(shuffleArray(questionsData));
+    // Reset pause system
+    setIsPaused(false);
+    setPauseTimeLeft(300);
 
     setScreen("start");
   };
@@ -273,6 +317,10 @@ function App() {
             totalQuestions={quizQuestions.length}
             score={score}
             feedback={feedback}
+            isPaused={isPaused}
+            pauseTimeLeft={pauseTimeLeft}
+            onPause={handlePause}
+            onResume={handleResume}
           />
         )}
 

@@ -69,7 +69,7 @@ function StartScreen({
                             </p>
 
                             <h2 className="text-2xl font-bold text-white">
-                                40 sec
+                                60 sec
                             </h2>
                         </div>
 
