@@ -1,543 +1,626 @@
 const questions = [
     {
-        question: "Which statement BEST describes a computer?",
+        question: "Which term best describes the process of creating and maintaining a website that runs on the internet and allows users to access its content?",
         type: "multiple",
         options: [
-            "An electronic device that accepts data, processes it, stores it, and produces output",
-            "An electronic device that stores data and produces information",
-            "An electronic device that processes information without requiring input",
-            "An electronic device mainly designed to store programs and files"
+            "Web development",
+            "Database management",
+            "Software installation",
+            "Network configuration"
         ],
         correct: 0
     },
+
     {
-        question: "Why are computers important in accounting?",
+        question: "A developer creates a website for a person that contains personal details and a resume. The content can only be changed by modifying the source code. What type of web application is being described?",
         type: "multiple",
         options: [
-            "They eliminate the need for accountants",
-            "They make financial work faster and more accurate.",
-            "They allow accountants to avoid keeping financial records",
-            "They mainly improve the physical storage of accounting documents"
+            "Dynamic web application",
+            "Static web application",
+            "Full-stack application",
+            "Responsive application"
         ],
         correct: 1
     },
+
     {
-        question: "Which device is considered the first known calculating device according to the lesson?",
+        question: "A company wants a website with frontend and backend components and a backoffice where content updates can be managed. Which type of web application best matches this requirement?",
         type: "multiple",
         options: [
-            "Pascaline",
-            "Difference Engine",
-            "Abacus",
-            "Analytical Engine"
+            "Static web application",
+            "Personal website",
+            "Dynamic web application",
+            "Source-code website"
         ],
         correct: 2
     },
+
     {
-        question: "What was the primary purpose of the Abacus?",
+        question: "A developer is assigned to create the layout, design, and interactive features that users see and use through their browser. Which position best matches this responsibility?",
         type: "multiple",
         options: [
-            "Performing advanced mathematical equations",
-            "Processing business and census data",
-            "Producing mathematical tables automatically",
-            "Counting and performing basic arithmetic"
+            "Backend developer",
+            "Database developer",
+            "Full-stack developer",
+            "Frontend developer"
         ],
         correct: 3
     },
+
     {
-        question: "Which statement BEST distinguishes the Pascaline from the Abacus?",
+        question: "A web application needs a developer to handle data processing, storage, retrieval, and the information required by the frontend. Which position is responsible for these tasks?",
         type: "multiple",
         options: [
-            "The Pascaline used gears and wheels and could perform addition and subtraction",
-            "The Pascaline used punched cards and performed different types of calculations",
-            "The Pascaline used vacuum tubes to process numerical data",
-            "The Pascaline used transistors to perform arithmetic operations"
+            "Backend developer",
+            "Frontend developer",
+            "Web designer",
+            "Content developer"
         ],
         correct: 0
     },
+
     {
-        question: "Why was the Pascaline developed?",
+        question: "A developer is capable of building both the client-side and server-side parts of a web application. Which position best describes this developer?",
         type: "multiple",
         options: [
-            "To help Charles Babbage create mathematical tables",
-            "To help Blaise Pascal's father calculate taxes",
-            "To help businesses process census information",
-            "To help Ada Lovelace write computer programs"
+            "Frontend developer",
+            "Full-stack developer",
+            "Backend developer",
+            "Web designer"
         ],
         correct: 1
     },
+
     {
-        question: "Which feature made the Analytical Engine significant in the history of computers?",
+        question: "A business uses a website to count product details, manage online inventory, and operate a point-of-sale system. What capability of web applications does this example demonstrate?",
         type: "multiple",
         options: [
-            "It was the first computer to use vacuum tubes",
-            "It was the first commercially available computer in the United States",
-            "It introduced concepts similar to input, processing, memory, and output",
-            "It replaced transistors with integrated circuits"
+            "Creating access to any device",
+            "Generating additional revenue",
+            "Automating business processes",
+            "Eliminating software installation"
         ],
         correct: 2
     },
+
     {
-        question: "Which characteristic BEST describes ENIAC?",
+        question: "A company moves its local software to a website so users only need a browser to create, edit, and share documents. What benefit of web applications is being demonstrated?",
         type: "multiple",
         options: [
-            "It occupied an entire room and used 18,000 tubes",
-            "It was small, portable, and battery-powered",
-            "It used transistors and consumed little electricity",
-            "It was mainly designed for home and school use"
-        ],
-        correct: 0
-    },
-    {
-        question: "Which of the following was a major use of UNIVAC?",
-        type: "multiple",
-        options: [
-            "Performing only basic arithmetic",
-            "Processing business and census data",
-            "Producing mathematical tables by hand",
-            "Creating graphical user interfaces"
-        ],
-        correct: 1
-    },
-    {
-        question: "A business needs a computer specifically for processing business and census data and wants a system more practical for actual business and government operations. Which historical computer BEST matches this description?",
-        type: "multiple",
-        options: [
-            "ENIAC",
-            "Analytical Engine",
-            "UNIVAC",
-            "Difference Engine"
-        ],
-        correct: 2
-    },
-    {
-        question: "A computer is large, produces excessive heat, consumes a lot of electricity, and uses machine language. Which generation does it most likely belong to?",
-        type: "multiple",
-        options: [
-            "Second generation",
-            "Third generation",
-            "Fourth generation",
-            "First generation"
+            "Automating business processes",
+            "Generating additional revenue",
+            "Creating access to any device",
+            "Eliminating the need to install additional software"
         ],
         correct: 3
     },
+
     {
-        question: "A company wants to replace an old computer system that uses vacuum tubes with a system that is smaller, faster, more reliable, and produces less heat. Which generation's technology would BEST address this need?",
+        question: "A company wants customers to access its website using a phone, tablet, laptop, or personal computer while allowing the website to adjust to different screen sizes. What capability is being described?",
         type: "multiple",
         options: [
-            "Second generation",
-            "First generation",
-            "Third generation",
-            "Fourth generation"
+            "Creating access to any device",
+            "Automating business processes",
+            "Generating additional revenue",
+            "Eliminating software installation"
         ],
         correct: 0
     },
+
     {
-        question: "Which combination BEST represents fourth-generation computers?",
+        question: "A developer writes <P> instead of <p> in an HTML document. Based on the module, what will happen?",
         type: "multiple",
         options: [
-            "Vacuum tubes, machine language, large rooms",
-            "Transistors, assembly language, less heat",
-            "Microprocessors, portability, GUI, and internet connectivity",
-            "Integrated circuits, multitasking, operating systems"
-        ],
-        correct: 2
-    },
-    {
-        question: "Which contribution is associated with Alan Turing?",
-        type: "multiple",
-        options: [
-            "Developing Microsoft Windows",
-            "Helping break the German Enigma Code",
-            "Creating the Apple Macintosh",
-            "Inventing the World Wide Web"
+            "The browser will always display an error.",
+            "The tags will be treated the same way.",
+            "The paragraph will not appear on the webpage.",
+            "The browser will treat the tags as different elements."
         ],
         correct: 1
     },
+
     {
-        question: "Which contribution is MOST closely associated with Steve Jobs?",
+        question: "Which group of HTML elements is described as being specifically designed for creating headings, ranging from the most important to the least important heading?",
         type: "multiple",
         options: [
-            "Development of the Turing Machine",
-            "Development of the Analytical Engine",
-            "Invention of the World Wide Web",
-            "Popularization of the Apple Macintosh"
+            "<p> to <br>",
+            "<a> to <img>",
+            "<h1> to <h6>",
+            "<head> to <body>"
+        ],
+        correct: 2
+    },
+
+    {
+        question: "A student is writing an HTML element using the structure <tagname>Content goes here...</tagname>. Which part represents the actual information displayed inside the element?",
+        type: "multiple",
+        options: [
+            "Start tag",
+            "End tag",
+            "Content",
+            "Tag name"
+        ],
+        correct: 2
+    },
+
+    {
+        question: "A student wants to create a paragraph containing personal information and wants the browser to recognize it as a paragraph. Which structure should be used?",
+        type: "multiple",
+        options: [
+            "<h1>Personal Information</h1>",
+            "<body>Personal Information</body>",
+            "<br>Personal Information</br>",
+            "<p>Personal Information</p>"
         ],
         correct: 3
     },
+
     {
-        question: "A user types a name and student number using a keyboard before the computer can work with the information. Which computer function is taking place?",
+        question: "A student is selecting a program for writing and editing HTML files on Windows. Which option is identified in the module as an HTML editor?",
         type: "multiple",
         options: [
-            "Processing the information",
-            "Inputting the information",
-            "Storing the information",
-            "Outputting the information"
-        ],
-        correct: 1
-    },
-    {
-        question: "A computer stores information in a memory component, and the information remains available even after the power is turned off. Which type of memory is being described?",
-        type: "multiple",
-        options: [
-            "Volatile memory",
-            "Temporary memory",
-            "Non-volatile memory",
-            "Working memory"
-        ],
-        correct: 2
-    },
-    {
-        question: "After a computer finishes processing a student's grades, the results are shown on the screen. Which computer function is being performed?",
-        type: "multiple",
-        options: [
-            "Output",
-            "Input",
-            "Processing",
-            "Storage"
+            "Notepad",
+            "Microsoft Excel",
+            "Windows Media Player",
+            "Calculator"
         ],
         correct: 0
     },
+
     {
-        question: "Which device is commonly used to transfer files between computers through USB?",
+        question: "A student creates a hyperlink using <a href=\"https://google.com/\">Visit Google</a>. What part of the code will the user click?",
         type: "multiple",
         options: [
-            "SD card",
-            "External drive",
-            "Flash drive",
-            "Internal drive"
+            "The URL",
+            "The href attribute",
+            "The text \"Visit Google\"",
+            "The opening <a> tag"
         ],
         correct: 2
     },
+
     {
-        question: "A user needs additional storage for large videos, photos, games, and backups. Which device is most suitable?",
+        question: "A developer wants a linked webpage to open in a new browser tab instead of replacing the current page. Which target value should be used?",
         type: "multiple",
         options: [
-            "SD card",
-            "Flash drive",
-            "Internal hard drive",
-            "External hard drive"
+            "_self",
+            "_same",
+            "_current",
+            "_blank"
         ],
         correct: 3
     },
+
     {
-        question: "A computer needs to share files and access the internet through other connected devices. Which computer function makes this possible?",
+        question: "A hyperlink is created without specifying another target. Where will the linked document normally be displayed?",
         type: "multiple",
         options: [
-            "Communication",
-            "Storage",
-            "Processing",
-            "Output"
+            "In the current browser window",
+            "In a new browser window",
+            "In a separate application",
+            "In a new HTML document"
         ],
         correct: 0
     },
+
     {
-        question: "Which device connects multiple devices to the same network?",
+        question: "A developer creates an <img> element and notices that there is no closing </img> tag. Why is this valid according to the module?",
         type: "multiple",
         options: [
-            "Modem",
-            "Router",
-            "NIC",
-            "Adapter"
+            "The <img> tag is an empty tag.",
+            "The <img> tag automatically closes itself.",
+            "The browser adds a closing tag during execution.",
+            "The <img> tag only requires a closing tag when styled."
+        ],
+        correct: 0
+    },
+
+    {
+        question: "A developer wants to control the dimensions of an image directly within the HTML element. Which attribute can be used to specify the image width and height?",
+        type: "multiple",
+        options: [
+            "src",
+            "style",
+            "alt",
+            "href"
         ],
         correct: 1
     },
+
     {
-        question: "Which device connects a home or office network to an Internet Service Provider?",
+        question: "A programmer wants an image to have a width of 500 pixels and a height of 600 pixels. Which style declaration matches this requirement?",
         type: "multiple",
         options: [
-            "Router",
-            "NIC",
-            "Modem",
-            "Adapter"
+            "style=\"size:500px;600px;\"",
+            "style=\"image-width:500px;image-height:600px;\"",
+            "style=\"width:500px;height:600px;\"",
+            "style=\"src:500px;alt:600px;\""
         ],
         correct: 2
     },
+
     {
-        question: "A desktop computer needs wireless connectivity but does not have built-in Wi-Fi. Which device can be added?",
+        question: "A website displays instructions for installing software where the steps must appear in a specific sequence. Which type of HTML list is most appropriate?",
         type: "multiple",
         options: [
-            "Network card",
-            "Storage card",
-            "Graphics card",
-            "Wi-Fi adapter"
+            "Unordered list",
+            "Bullet list",
+            "Description list",
+            "Ordered list"
         ],
         correct: 3
     },
+
     {
-        question: "Which BEST describes software in a computer system?",
+        question: "A student wants to display an image but writes the following code:",
+        code: `<img href="flower.jpg"
+alt="Flower">`,
         type: "multiple",
         options: [
-            "The programs and instructions used by a computer",
-            "The physical parts used by a computer",
-            "The devices used to connect a computer",
-            "The components used to store computer data"
+            "The href attribute should be changed to src.",
+            "The src attribute should be changed to href.",
+            "The href attribute should be changed to alt.",
+            "The src attribute should be changed to style."
         ],
         correct: 0
     },
+
     {
-        question: "What is the main purpose of system software?",
+        question: "A student wants to style all <p> elements but writes the following CSS:",
+        code: `p {
+    font-size: 20px
+    color: blue;
+}`,
         type: "multiple",
         options: [
-            "To create spreadsheet files",
-            "To manage computer hardware",
-            "To edit word documents",
-            "To conduct video meetings"
+            "A semicolon is missing after 20px.",
+            "A semicolon is missing after font-size.",
+            "A colon is missing after 20px.",
+            "A colon is missing before color."
+        ],
+        correct: 0
+    },
+
+    {
+        question: "A student wants to create a table row containing two data cells but writes:",
+        code: `<td>
+    <tr>John</tr>
+    <tr>20</tr>
+</td>`,
+        type: "multiple",
+        options: [
+            "The <tr> elements should contain the <td> elements.",
+            "The <td> element should contain the <tr> elements.",
+            "The <tr> elements should be replaced with <th> elements.",
+            "The <td> elements should be replaced with <table> elements."
+        ],
+        correct: 0
+    },
+
+    {
+        question: "A programmer is creating an HTML table and needs to define one horizontal row containing several cells. Which tag should be used?",
+        type: "multiple",
+        options: [
+            "<td>",
+            "<tr>",
+            "<th>",
+            "<table>"
         ],
         correct: 1
     },
+
     {
-        question: "Which software is designed to help users perform specific tasks?",
+        question: "A student wants to make a paragraph's text blue using inline CSS but writes:",
+        code: `<p style="text-color: blue;">Hello World</p>`,
         type: "multiple",
         options: [
-            "System software",
-            "Network software",
-            "Application software",
-            "Hardware software"
+            "text-color should be changed to color.",
+            "color should be changed to text-color.",
+            "text-color should be changed to font-color.",
+            "font-color should be changed to color."
+        ],
+        correct: 0
+    },
+
+    {
+        question: "A developer is creating a table with the headings \"Name,\" \"Age,\" and \"Section.\" Which HTML element should be used for these heading cells?",
+        type: "multiple",
+        options: [
+            "<th>",
+            "<td>",
+            "<tr>",
+            "<table>"
+        ],
+        correct: 0
+    },
+
+    {
+        question: "A student wants to create a heading but writes:",
+        code: `<h1 Welcome to My Website</h1>`,
+        type: "multiple",
+        options: [
+            "The opening <h1 tag is missing the > symbol.",
+            "The opening <h1> tag is missing the / symbol.",
+            "The closing </h1> tag is missing the > symbol.",
+            "The closing </h1> tag is missing the < symbol."
+        ],
+        correct: 0
+    },
+
+    {
+        question: "A developer wants to create a table row containing three ordinary data cells. Which structure correctly represents the row?",
+        type: "multiple",
+        options: [
+            "<td><tr>Data 1</tr></td>",
+            "<table><td>Data 1</td></table>",
+            "<tr><td>Data 1</td><td>Data 2</td><td>Data 3</td></tr>",
+            "<th><td>Data 1</td><td>Data 2</td></th>"
         ],
         correct: 2
     },
+
     {
-        question: "A computer can open applications, manage hardware, and allow users to interact with the system. Which software makes these functions possible?",
+        question: "A developer wants to add visible borders around the cells of an HTML table using the syntax demonstrated in the module. Which code should be used?",
         type: "multiple",
         options: [
-            "Application software",
-            "Utility program",
-            "File management",
-            "Operating system"
+            "<table border=\"0\">",
+            "<table line=\"1\">",
+            "<table style=\"border:none\">",
+            "<table border=\"1\">"
         ],
         correct: 3
     },
+
     {
-        question: "What would most likely happen if a computer had no operating system?",
+        question: "A developer is creating an HTML table that contains column headings followed by rows of data. Which combination correctly represents the main elements needed for the table?",
         type: "multiple",
         options: [
-            "Computer could not run properly",
-            "Files could not be stored permanently",
-            "Hardware could not receive electricity",
-            "Internet access would automatically stop"
+            "<table>, <tr>, <th>, and <td>",
+            "<table>, <ol>, <li>, and <td>",
+            "<a>, <href>, <img>, and <src>",
+            "<ul>, <li>, <tr>, and <alt>"
         ],
         correct: 0
     },
+
     {
-        question: "A student changes the wallpaper and rearranges icons on the main Windows screen. Which part of Windows is being customized?",
+        question: "Which term is described as the full meaning of the abbreviation CSS, the design language used to make webpages more presentable?",
         type: "multiple",
         options: [
-            "Start Menu",
-            "Desktop",
-            "Taskbar",
-            "File Explorer"
-        ],
-        correct: 1
-    },
-    {
-        question: "Several applications are running at the same time. The operating system makes sure each program receives enough RAM. Which function is being performed?",
-        type: "multiple",
-        options: [
-            "File management",
-            "Device management",
-            "Memory management",
-            "Security management"
+            "Computer Style Sheet",
+            "Creative Styling System",
+            "Cascading Style Sheets",
+            "Cascading Syntax System"
         ],
         correct: 2
     },
+
     {
-        question: "A printer is connected to a computer, but the operating system needs to recognize and operate it. Which function is involved?",
+        question: "A developer writes the following CSS rule:",
+        code: `h1 { color: blue; }`,
         type: "multiple",
         options: [
-            "File management",
-            "Memory management",
-            "User interface",
-            "Device management"
-        ],
-        correct: 3
-    },
-    {
-        question: "Which OS function allows hardware devices to communicate with the operating system?",
-        type: "multiple",
-        options: [
-            "Device management",
-            "Security",
-            "File management",
-            "User interface"
+            "h1",
+            "color",
+            "blue",
+            "{ }"
         ],
         correct: 0
     },
+
     {
-        question: "A company wants to protect its business files from unauthorized users. Which OS function is MOST relevant?",
+        question: "A programmer examines a CSS declaration and sees color: blue;. Which part of this declaration identifies the characteristic being modified?",
         type: "multiple",
         options: [
-            "File management",
-            "Security",
-            "Memory management",
-            "User interface"
+            "blue",
+            "color",
+            ";",
+            "{ }"
         ],
         correct: 1
     },
+
     {
-        question: "A programmer wants an operating system commonly used by programmers and server administrators. Which is the BEST choice based on the lesson?",
+        question: "A developer uses font-size: 12px; in a CSS rule. What does the value 12px represent in this declaration?",
         type: "multiple",
         options: [
-            "Windows",
-            "macOS",
-            "Linux",
-            "Android"
+            "The selector being targeted by the rule",
+            "The property being changed by the rule",
+            "The value assigned to the selected property",
+            "The name of the HTML element receiving the rule"
         ],
         correct: 2
     },
+
     {
-        question: "What happens when the Recycle Bin is emptied?",
+        question: "A student wants to change the color of an <h1> heading using CSS but writes the following code. What is the error in the code?",
+        code: `<style>
+        h1 {
+            colour: blue;
+        }
+        </style>`,
         type: "multiple",
         options: [
-            "Files are automatically restored",
-            "Files are moved to Documents",
-            "Files are permanently removed",
-            "Files are copied to another drive"
+            "The <style> element should be placed inside the <body>.",
+            "The selector h1 should be replaced with #h1.",
+            "The CSS property colour should be written as color.",
+            "The value blue should be written as #blue."
         ],
         correct: 2
     },
+
     {
-        question: "A student has several files that need to be shared through email. What can be used to reduce their combined file size?",
+        question: "A student wants to apply a CSS class named para to several paragraphs but writes the following CSS code:",
+        code: `#para {
+    color: blue;
+}`,
         type: "multiple",
         options: [
-            "ZIP folder",
-            "Recycle Bin",
-            "File Explorer",
-            "Start Menu"
+            "The color property should be replaced with font-color.",
+            "The selector should use .para instead of #para.",
+            "The selector should use *para instead of #para.",
+            "The blue value should be replaced with #blue."
+        ],
+        correct: 1
+    },
+
+    {
+        question: "A student wants to create a paragraph but writes:",
+        code: `<p>Welcome to my website<p>`,
+        type: "multiple",
+        options: [
+            "The second <p> should be written as </p>.",
+            "The first <p> should be written as </p>.",
+            "The second <p> should be written as <p/>.",
+            "The first <p> should be written as <p/>."
         ],
         correct: 0
     },
+
     {
-        question: "A student has three folders containing documents, pictures, and videos. The student wants to organize them and make them easier to find. Which Windows tool is MOST appropriate?",
+        question: "A student wants to create a hyperlink to Google but writes the following code:",
+        code: `<a href="https://google.com>Visit Google</a>`,
         type: "multiple",
         options: [
-            "Recycle Bin",
-            "File Explorer",
-            "Start Menu",
-            "Windows Search"
+            "The closing quotation mark after https://google.com is missing.",
+            "The opening quotation mark before https://google.com is missing.",
+            "The closing quotation mark after Visit Google is missing.",
+            "The opening quotation mark before Visit Google is missing."
         ],
-        correct: 1
+        correct: 0
     },
+
     {
-        question: "A user opens several programs at once, connects a printer, organizes files, and protects the computer with a password. Which software coordinates these different activities?",
+        question: "Identify the system that uses codes or tags to tell a computer how content should be displayed or structured in a web document.",
+        type: "identification",
+        answer: ["Markup language"]
+    },
+
+    {
+        question: "Identify the person who created HTML and is one of the key individuals associated with the development of the World Wide Web.",
+        type: "identification",
+        answer: ["Tim Berners-Lee"]
+    },
+
+    {
+        question: "Identify the declaration placed at the beginning of an HTML5 document.",
+        type: "identification",
+        answer: ["<!DOCTYPE html>"]
+    },
+
+    {
+        question: "Identify the HTML section that contains the visible content of a webpage, such as headings, paragraphs, images, buttons, links, and forms.",
+        type: "identification",
+        answer: ["<body>"]
+    },
+
+    {
+        question: "Identify the HTML element used to specify the title that appears in the browser tab.",
+        type: "identification",
+        answer: ["<title>"]
+    },
+
+    {
+        question: "Identify the HTML section that contains information about the document and can include links to external files such as CSS files.",
+        type: "identification",
+        answer: ["<head>"]
+    },
+
+    {
+        question: "Identify the HTML element used to organize a block of text into a paragraph.",
+        type: "identification",
+        answer: ["<p>"]
+    },
+
+    {
+        question: "Identify the HTML element used to force content to appear on a new line without creating a new paragraph.",
+        type: "identification",
+        answer: ["<br>"]
+    },
+
+    {
+        question: "Identify the HTML element used to create a horizontal line that visually separates sections of webpage content.",
+        type: "identification",
+        answer: ["<hr>"]
+    },
+
+    {
+        question: "Identify the HTML element used to create a hyperlink that allows users to move from the current webpage to another document.",
+        type: "identification",
+        answer: ["<a>"]
+    },
+
+    {
+        question: "Identify the HTML attribute used to specify the URL or destination of a hyperlink.",
+        type: "identification",
+        answer: ["href"]
+    },
+
+    {
+        question: "Identify the HTML element used to display an image on a webpage.",
+        type: "identification",
+        answer: ["<img>"]
+    },
+
+    {
+        question: "Identify the HTML attribute used to specify the path or URL where an image can be found.",
+        type: "identification",
+        answer: ["src"]
+    },
+
+    {
+        question: "Identify the HTML attribute used to provide alternative text for an image.",
+        type: "identification",
+        answer: ["alt"]
+    },
+
+    {
+        question: "Identify the HTML element used to create a list in which the browser automatically numbers each item.",
+        type: "identification",
+        answer: ["<ol>"]
+    },
+
+    {
+        question: "Identify the HTML element used to organize and display information in rows and columns.",
+        type: "identification",
+        answer: ["<table>"]
+    },
+
+    {
+        question: "Identify the technology used to control the visual appearance, layout, design, and overall presentation of an HTML webpage.",
+        type: "identification",
+        answer: ["CSS"]
+    },
+
+    {
+        question: "Identify the CSS method that places styling directly inside an HTML element.",
+        type: "identification",
+        answer: ["Inline CSS, Inline"]
+    },
+
+    {
+        question: "Identify the CSS method that places CSS rules inside a <style> element within the <head> section of an HTML document.",
+        type: "identification",
+        answer: ["Internal CSS, Internal"]
+    },
+
+    {
+        question: "Identify the CSS method that keeps styles in a separate file, such as style.css, and connects that file to an HTML document.",
+        type: "identification",
+        answer: ["External CSS, External"]
+    },
+
+    {
+        question: "A student wants to create a hyperlink to Google but writes the following code:",
+        code: `<a src="https://google.com">Visit Google</a>`,
         type: "multiple",
         options: [
-            "Application software",
-            "File management",
-            "Operating system",
-            "Utility software"
+            "The src attribute should be changed to href.",
+            "The href attribute should be changed to src.",
+            "The src attribute should be changed to alt.",
+            "The href attribute should be changed to target."
         ],
-        correct: 2
-    },
-    {
-        question: "A computer loses the information stored in a memory component when the power is turned off. Which type of memory is being described?",
-        type: "multiple",
-        options: [
-            "Non-volatile memory",
-            "Permanent memory",
-            "Secondary memory",
-            "Volatile memory"
-        ],
-        correct: 3
-    },
-        {
-        question: "What computer was described as one of the first large electronic digital computers?",
-        type: "identification",
-        answer: "ENIAC"
-    },
-    {
-        question: "What technology characterized third-generation computers?",
-        type: "identification",
-        answer: ["Integrated circuits", "IC"]
-    },
-    {
-        question: "Who is the person known as the \"Father of the Computer\"?",
-        type: "identification",
-        answer: "Charles Babbage"
-    },
-    {
-        question: "Who is known as the \"First Computer Programmer\"?",
-        type: "identification",
-        answer: "Ada Lovelace"
-    },
-    {
-        question: "Who among computing pioneer is associated with Microsoft Windows and popularizing personal computers?",
-        type: "identification",
-        answer: "Bill Gates"
-    },
-    {
-        question: "A student is studying the person who developed the first web browser, web server, HTML, HTTP, and URLs. Who is the pioneer being studied?",
-        type: "identification",
-        answer: ["Tim Berners-Lee","Tim Berner Lee"]
-    },
-    {
-        question: "A user wants to select icons, open files, and move the pointer around the screen. What device is most appropriate?",
-        type: "identification",
-        answer: "Mouse"
-    },
-    {
-        question: "A student wants to convert a printed document into a digital file. What device should be used?",
-        type: "identification",
-        answer: "Scanner"
-    },
-    {
-        question: "What device converts sound into digital signals that a computer can process?",
-        type: "identification",
-        answer: ["Microphone","Mic"]
-    },
-    {
-        question: "A student enters several numbers into a computer, and the computer calculates their total and average. What computer function is being performed?",
-        type: "identification",
-        answer: "Processing"
-    },
-    {
-        question: "What component is known as the brain of the computer?",
-        type: "identification",
-        answer: ["CPU","Central Processing Unit"]
-    },
-    {
-        question: "What component temporarily stores data while programs are running?",
-        type: "identification",
-        answer: ["RAM","Random Access Memory"]
-    },
-    {
-        question: "What component connects the CPU, RAM, storage, and other hardware?",
-        type: "identification",
-        answer: "Motherboard"
-    },
-    {
-        question: "After a computer finishes processing a student's grades, the results are shown on the screen. What computer function is being performed?",
-        type: "identification",
-        answer: "Output"
-    },
-    {
-        question: "What device displays text, images, videos, and graphics?",
-        type: "identification",
-        answer: "Monitor"
-    },
-    {
-        question: "What storage device uses flash memory and has no moving parts?",
-        type: "identification",
-        answer: ["SSD","Solid State Drive"]
-    },
-    {
-        question: "A user wants quick access to running applications at the bottom of the screen. What Windows feature should be used?",
-        type: "identification",
-        answer: "Taskbar"
-    },
-    {
-        question: "A user wants to access installed programs, settings, and power options. What Windows feature should be opened?",
-        type: "identification",
-        answer: "Start Menu"
-    },
-    {
-        question: "A student wants to change display, network, privacy, and system options. What Windows tool should be used?",
-        type: "identification",
-        answer: "Settings"
-    },
-    {
-        question: "A user accidentally deleted a file and finds it inside the Recycle Bin. What operation can return it to its original location?",
-        type: "identification",
-        answer: "Restore"
+        correct: 0
     }
 ];
 

@@ -19,7 +19,7 @@ function App() {
   const [studentName, setStudentName] = useState("");
   const [quizQuestions] = useState(() => shuffleArray(questions));
   const [isPaused, setIsPaused] = useState(false);
-  const [pauseTimeLeft, setPauseTimeLeft] = useState(300);
+  const [pauseTimeLeft, setPauseTimeLeft] = useState(600);
 
 
 
@@ -298,7 +298,7 @@ function App() {
       <div className="min-h-screen bg-black/60">
         {screen === "start" && (
           <StartScreen
-            title="MAS3 - Timed Quiz Challenge"
+            title="IT201 - Prelim Examination"
             totalQuestions={quizQuestions.length}
             totalPoints={totalPoints}
             studentName={studentName}

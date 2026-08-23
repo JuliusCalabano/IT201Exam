@@ -18,6 +18,15 @@ function QuestionCard({ question, onAnswer, selectedAnswer, }) {
                 {question.question}
             </h2>
 
+            {/* Code Block */}
+            {question.code && (
+                <pre className="bg-slate-900 border border-slate-700 rounded-xl p-4 mb-6 overflow-x-auto">
+                    <code className="text-green-400 font-mono text-sm whitespace-pre">
+                        {question.code}
+                    </code>
+                </pre>
+            )}
+            
             <div className="space-y-3">
                 {/* Multiple Choice */}
                 {question.type === "multiple" && (
