@@ -396,7 +396,7 @@ alt="Flower">`,
     },
 
     {
-        question: "A developer writes the following CSS rule:",
+        question: "The developer wants to identify which part determines the HTML element that will receive the style. Which part serves this purpose? A developer writes the following CSS rule:",
         code: `h1 { color: blue; }`,
         type: "multiple",
         options: [
