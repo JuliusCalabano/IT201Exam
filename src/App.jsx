@@ -19,7 +19,7 @@ function App() {
   const [studentName, setStudentName] = useState("");
   const [quizQuestions] = useState(() => shuffleArray(questions));
   const [isPaused, setIsPaused] = useState(false);
-  const [pauseTimeLeft, setPauseTimeLeft] = useState(600);
+  const [pauseTimeLeft, setPauseTimeLeft] = useState(300);
 
 
 
